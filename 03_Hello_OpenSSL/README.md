@@ -6,4 +6,4 @@ Refer to https://pycryptodome.readthedocs.io/en/latest/src/public_key/rsa.html#C
 
 ## RSA Decrypting
 
-RSA Decryption function for ciphertext c is D(c) = c^d (mod n).
+RSA Decryption function for ciphertext c is D(c) = c^d^ (mod n).
