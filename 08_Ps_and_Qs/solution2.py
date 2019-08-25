@@ -1,14 +1,20 @@
 from Crypto.PublicKey import RSA
+import math
 
 c = 0xf5ed9da29d8d260f22657e091f34eb930bc42f26f1e023f863ba13bee39071d1ea988ca62b9ad59d4f234fa7d682e22ce3194bbe5b801df3bd976db06b944da
 
 key1 = RSA.importKey(open('key1.txt').read())
 key2 = RSA.importKey(open('key2.txt').read())
 
+g = math.gcd(key1.n, key2.n)
 
-// factordb result
-p1 = 84131146998723013035726124824393467539823449570683991030677848137795334610229
-q1 = 107634389444824136554734231305548679460065919884322199796801660366105198986529
+print('g:',g)
+
+p1 = g
+q1 = key1.n//g
+
+assert p1*q1 == key1.n
+
 
 def egcd(a, b):
     if a == 0:
