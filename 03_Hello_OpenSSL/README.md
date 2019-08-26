@@ -12,4 +12,4 @@ Refer to https://pycryptodome.readthedocs.io/en/latest/src/public_key/rsa.html#C
 
 ## RSA Decryption
 
-RSA Decryption function for ciphertext c is D(c) = c^d^ (mod n). Given OpenSSL RSA private key provides all values d and n, so simple modular arithmetic is left.
+RSA Decryption function for ciphertext c is D(c) = c^d (mod n). Given OpenSSL RSA private key provides all values d and n, so simple modular arithmetic is left.
