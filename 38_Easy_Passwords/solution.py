@@ -2,10 +2,6 @@ import hashlib,crypt
 
 salt = 'abadsalt'
 
-def md5hash(salt,string):
-    return crypt.METHOD_MD5(string,salt)
-    #return hashlib.md5((salt+string).encode('utf-8')).hexdigest()
-
 def findPassword(shadow_line):
     f = open('/usr/share/dict/words','r')
 
@@ -14,8 +10,6 @@ def findPassword(shadow_line):
         if "'" in line:
             continue
         word = line.strip()
-
-        #print(crypt.crypt(word,'$1$abadsalt'))
 
         if shadow_line == crypt.crypt(word,'$1$abadsalt'):
             return word
